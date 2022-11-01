@@ -1,0 +1,6 @@
+F:\Package and Task-20221030T032301Z-001\Package and Task\fcisdsp-dsp.toolbox-78ddd969882b\fcisdsp-dsp.toolbox-78ddd969882b\DSPToolbox\DSPComponents\bin\Debug\DSPComponents.dll
+F:\Package and Task-20221030T032301Z-001\Package and Task\fcisdsp-dsp.toolbox-78ddd969882b\fcisdsp-dsp.toolbox-78ddd969882b\DSPToolbox\DSPComponents\bin\Debug\DSPComponents.pdb
+F:\Package and Task-20221030T032301Z-001\Package and Task\fcisdsp-dsp.toolbox-78ddd969882b\fcisdsp-dsp.toolbox-78ddd969882b\DSPToolbox\DSPComponents\obj\Debug\DSPAlgorithms.csproj.AssemblyReference.cache
+F:\Package and Task-20221030T032301Z-001\Package and Task\fcisdsp-dsp.toolbox-78ddd969882b\fcisdsp-dsp.toolbox-78ddd969882b\DSPToolbox\DSPComponents\obj\Debug\DSPAlgorithms.csproj.CoreCompileInputs.cache
+F:\Package and Task-20221030T032301Z-001\Package and Task\fcisdsp-dsp.toolbox-78ddd969882b\fcisdsp-dsp.toolbox-78ddd969882b\DSPToolbox\DSPComponents\obj\Debug\DSPComponents.dll
+F:\Package and Task-20221030T032301Z-001\Package and Task\fcisdsp-dsp.toolbox-78ddd969882b\fcisdsp-dsp.toolbox-78ddd969882b\DSPToolbox\DSPComponents\obj\Debug\DSPComponents.pdb
