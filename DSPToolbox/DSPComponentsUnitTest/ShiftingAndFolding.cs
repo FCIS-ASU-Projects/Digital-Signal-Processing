@@ -69,6 +69,13 @@ namespace DSPComponentsUnitTest
             s.InputSignal = f.OutputFoldedSignal;
             s.Run();
             actualOutputSignal = s.OutputShiftedSignal;
+
+            Console.WriteLine("expectedOutputSignal.SamplesIndices");
+            foreach (var i in expectedOutputSignal.SamplesIndices)
+                Console.WriteLine(i);
+            //Console.WriteLine("expectedOutputSignal.Samples");
+            //foreach (var i in expectedOutputSignal.Samples)
+            //    Console.WriteLine(i);
         }
 
         [TestMethod]
@@ -81,6 +88,13 @@ namespace DSPComponentsUnitTest
             s.InputSignal = f.OutputFoldedSignal;
             s.Run();
             actualOutputSignal = s.OutputShiftedSignal;
+
+            Console.WriteLine("expectedOutputSignal.SamplesIndices");
+            foreach (var i in expectedOutputSignal.SamplesIndices)
+                Console.WriteLine(i);
+            Console.WriteLine("expectedOutputSignal.Samples");
+            foreach (var i in expectedOutputSignal.Samples)
+                Console.WriteLine(i);
         }
 
         [TestMethod]
@@ -134,7 +148,14 @@ namespace DSPComponentsUnitTest
             // -5, -4, -3, -2
 
             actualOutputSignal = s2.OutputShiftedSignal;
-           // expectedOutputSignal = new Signal(new List<float>(){1, 2, 3, 8}, new List<int>(){{-5, -4, -3, -2}}, false));
+            // expectedOutputSignal = new Signal(new List<float>(){1, 2, 3, 8}, new List<int>(){{-5, -4, -3, -2}}, false));
+
+            Console.WriteLine("expectedOutputSignal.SamplesIndices");
+            foreach (var i in expectedOutputSignal.SamplesIndices)
+                Console.WriteLine(i);
+            Console.WriteLine("expectedOutputSignal.Samples");
+            foreach (var i in expectedOutputSignal.Samples)
+                Console.WriteLine(i);
         }
     }
 }
