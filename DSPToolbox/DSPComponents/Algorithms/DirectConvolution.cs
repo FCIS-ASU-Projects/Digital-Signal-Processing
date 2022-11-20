@@ -18,7 +18,29 @@ namespace DSPAlgorithms.Algorithms
         /// </summary>
         public override void Run()
         {
-            throw new NotImplementedException();
+            List<float> convoluted_s = new List<float>();
+            List<int> convoluted_s_index = new List<int>();
+            int start = InputSignal1.SamplesIndices.Min() + InputSignal2.SamplesIndices.Min();
+            int end = InputSignal1.SamplesIndices.Max() + InputSignal2.SamplesIndices.Max();
+            for (int numIterations = start; numIterations <= end; ++numIterations)
+            {
+                double resultHarmonic = 0;
+                int k;
+                for (k = start; k < InputSignal1.Samples.Count; ++k)
+                {
+                    if (numIterations - k < InputSignal2.SamplesIndices.Min() || numIterations - k > InputSignal2.SamplesIndices.Max())
+                        continue;
+                    if (k < InputSignal1.SamplesIndices.Min() || k > InputSignal1.SamplesIndices.Max())
+                        continue;
+                    int x_indx = InputSignal1.SamplesIndices.IndexOf(k);
+                    int h_indx = InputSignal2.SamplesIndices.IndexOf(numIterations - k);
+                    resultHarmonic += InputSignal1.Samples[x_indx] * InputSignal2.Samples[h_indx];
+                }
+                if (resultHarmonic == 0 && numIterations == end) continue;
+                convoluted_s.Add((float)resultHarmonic);
+                convoluted_s_index.Add(numIterations);
+            }
+            OutputConvolvedSignal = new Signal(convoluted_s, convoluted_s_index, false);
         }
     }
 }
