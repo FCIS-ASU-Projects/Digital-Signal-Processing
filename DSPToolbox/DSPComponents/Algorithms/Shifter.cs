@@ -16,15 +16,26 @@ namespace DSPAlgorithms.Algorithms
         public override void Run()
         {
             //throw new NotImplementedException();
-            OutputShiftedSignal = new Signal(InputSignal.Samples, false);
-            for (int i = 0; i < InputSignal.SamplesIndices.Count; i++)
+            OutputShiftedSignal = new Signal(InputSignal.Samples, InputSignal.Periodic);
+
+            if (InputSignal.Periodic)
             {
-                OutputShiftedSignal.SamplesIndices[i] = InputSignal.SamplesIndices[i] - ShiftingValue;
+                for (int i = 0; i < InputSignal.SamplesIndices.Count; i++)
+                {
+                    OutputShiftedSignal.SamplesIndices[i] = InputSignal.SamplesIndices[i] + ShiftingValue;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < InputSignal.SamplesIndices.Count; i++)
+                {
+                    OutputShiftedSignal.SamplesIndices[i] = InputSignal.SamplesIndices[i] - ShiftingValue;
+                }
             }
 
-            //Console.WriteLine("OutputShiftedSignal.SamplesIndices");
-            //foreach (var i in OutputShiftedSignal.SamplesIndices)
-            //    Console.WriteLine(i);
+            Console.WriteLine("OutputShiftedSignal.SamplesIndices");
+            foreach (var i in OutputShiftedSignal.SamplesIndices)
+                Console.WriteLine(i);
         }
     }
 }

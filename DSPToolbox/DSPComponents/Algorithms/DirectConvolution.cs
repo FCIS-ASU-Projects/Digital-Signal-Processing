@@ -24,7 +24,7 @@ namespace DSPAlgorithms.Algorithms
             int end = InputSignal1.SamplesIndices.Max() + InputSignal2.SamplesIndices.Max();
             for (int numIterations = start; numIterations <= end; ++numIterations)
             {
-                double resultHarmonic = 0;
+                float resultHarmonic = 0;
                 int k;
                 for (k = start; k < InputSignal1.Samples.Count; ++k)
                 {
@@ -37,7 +37,7 @@ namespace DSPAlgorithms.Algorithms
                     resultHarmonic += InputSignal1.Samples[x_indx] * InputSignal2.Samples[h_indx];
                 }
                 if (resultHarmonic == 0 && numIterations == end) continue;
-                convoluted_s.Add((float)resultHarmonic);
+                convoluted_s.Add(resultHarmonic);
                 convoluted_s_index.Add(numIterations);
             }
             OutputConvolvedSignal = new Signal(convoluted_s, convoluted_s_index, false);

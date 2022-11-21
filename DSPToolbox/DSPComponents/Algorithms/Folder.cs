@@ -16,10 +16,15 @@ namespace DSPAlgorithms.Algorithms
         {
             //throw new NotImplementedException();
             InputSignal.Samples.Reverse();
-            OutputFoldedSignal = new Signal(InputSignal.Samples, InputSignal.SamplesIndices, false);
-            Console.WriteLine("OutputFoldedSignal.Samples");
-            foreach (var i in OutputFoldedSignal.Samples)
-                Console.WriteLine(i);
+            OutputFoldedSignal = new Signal(InputSignal.Samples, !InputSignal.Periodic);
+            InputSignal.SamplesIndices.Reverse();
+            for(int i=0; i< InputSignal.Samples.Count; i++)
+            {
+                OutputFoldedSignal.SamplesIndices[i] = InputSignal.SamplesIndices[i] * -1;
+            }
+            //Console.WriteLine("OutputFoldedSignal.Samples");
+            //foreach (var i in OutputFoldedSignal.Samples)
+            //    Console.WriteLine(i);
         }
     }
 }
