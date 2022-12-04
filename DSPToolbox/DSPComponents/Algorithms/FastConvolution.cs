@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,47 @@ namespace DSPAlgorithms.Algorithms
         /// </summary>
         public override void Run()
         {
-            throw new NotImplementedException();
+            int zeros = (InputSignal1.Samples.Count + InputSignal2.Samples.Count) - 1;
+            for (int i = 0; i < (zeros - InputSignal1.Samples.Count); i++)
+            {
+                InputSignal1.Samples.Add(0);
+            }
+            for (int i = 0; i < (zeros - InputSignal2.Samples.Count); i++)
+            {
+                InputSignal2.Samples.Add(0);
+            }
+            DiscreteFourierTransform dft = new DiscreteFourierTransform();
+            dft.InputTimeDomainSignal = InputSignal1;
+            dft.Run();
+            DiscreteFourierTransform dft2 = new DiscreteFourierTransform();
+            dft2.InputTimeDomainSignal = InputSignal2;
+            dft2.Run();
+            List<Complex> c1 = new List<Complex>();
+            List<Complex> c2 = new List<Complex>();
+            for (int i = 0; i < dft.OutputFreqDomainSignal.FrequenciesAmplitudes.Count; i++)
+            {
+                Complex c = new Complex(dft.OutputFreqDomainSignal.FrequenciesAmplitudes[i] * (float)Math.Cos(dft.OutputFreqDomainSignal.FrequenciesPhaseShifts[i]),
+                                       dft.OutputFreqDomainSignal.FrequenciesAmplitudes[i] * (float)Math.Sin(dft.OutputFreqDomainSignal.FrequenciesPhaseShifts[i]));
+                c1.Add(c);
+            }
+            for (int i = 0; i < dft2.OutputFreqDomainSignal.FrequenciesAmplitudes.Count; i++)
+            {
+                Complex c = new Complex(dft2.OutputFreqDomainSignal.FrequenciesAmplitudes[i] * (float)Math.Cos(dft.OutputFreqDomainSignal.FrequenciesPhaseShifts[i]),
+                                       dft2.OutputFreqDomainSignal.FrequenciesAmplitudes[i] * (float)Math.Sin(dft.OutputFreqDomainSignal.FrequenciesPhaseShifts[i]));
+                c2.Add(c);
+            }
+            List<Complex> resultOfMultiply = new List<Complex>();
+            InverseDiscreteFourierTransform idft = new InverseDiscreteFourierTransform();
+            idft.InputFreqDomainSignal.FrequenciesPhaseShifts = new List<float>();
+            idft.InputFreqDomainSignal.FrequenciesAmplitudes = new List<float>();
+            for (int i = 0; i < dft2.OutputFreqDomainSignal.FrequenciesAmplitudes.Count; i++)
+            {
+                resultOfMultiply.Add(c1[i] * c2[i]);
+                idft.InputFreqDomainSignal.FrequenciesPhaseShifts.Add((float)resultOfMultiply[i].Phase);
+                idft.InputFreqDomainSignal.FrequenciesAmplitudes.Add((float)resultOfMultiply[i].Magnitude);
+            }
+            idft.Run();
+            OutputConvolvedSignal = new Signal(idft.OutputTimeDomainSignal.Samples, false);
         }
     }
 }
