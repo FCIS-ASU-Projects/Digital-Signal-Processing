@@ -16,7 +16,7 @@ namespace DSPAlgorithms.Algorithms
         public override void Run()
         {
             List<float> harmonics = new List<float>();
-            int N = InputFreqDomainSignal.Frequencies.Count;
+            int N = InputFreqDomainSignal.FrequenciesAmplitudes.Count;
             for (int k=0; k<N; k++)//Iterations on harmonics
             {
                 Complex harmonic = new Complex(0, 0);
