@@ -29,7 +29,6 @@ namespace DSPComponentsUnitTest
             FIR.InputTimeDomainSignal = sig1;
 
             FIR.Run();
-
             Assert.IsTrue(UnitTestUtitlities.SignalsSamplesIndicesAreEqual(expectedCoefficients, FIR.OutputHn));
         }
 
@@ -50,7 +49,6 @@ namespace DSPComponentsUnitTest
             FIR.InputTimeDomainSignal = sig1;
 
             FIR.Run();
-
             Assert.IsTrue(UnitTestUtitlities.SignalsSamplesIndicesAreEqual(expectedFilteredSignal, FIR.OutputYn));
 
             //
@@ -75,7 +73,6 @@ namespace DSPComponentsUnitTest
             FIR.InputTimeDomainSignal = sig1;
 
             FIR.Run();
-
             Assert.IsTrue(UnitTestUtitlities.SignalsSamplesIndicesAreEqual(expectedCoefficients, FIR.OutputHn));
         }
 
@@ -96,7 +93,6 @@ namespace DSPComponentsUnitTest
             FIR.InputTimeDomainSignal = sig1;
 
             FIR.Run();
-
             Assert.IsTrue(UnitTestUtitlities.SignalsSamplesIndicesAreEqual(expectedFilteredSignal, FIR.OutputYn));
         }
     
@@ -142,7 +138,7 @@ namespace DSPComponentsUnitTest
             FIR.InputTimeDomainSignal = sig1;
 
             FIR.Run();
-
+            
             Assert.IsTrue(UnitTestUtitlities.SignalsSamplesIndicesAreEqual(expectedFilteredSignal, FIR.OutputYn));
         }
 

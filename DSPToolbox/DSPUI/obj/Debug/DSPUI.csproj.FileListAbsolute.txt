@@ -119,3 +119,4 @@ C:\Huda\FCIS\4th Year\1st Term\Digital Signal Processing\Tasks\Digital-Signal-Pr
 C:\Huda\FCIS\4th Year\1st Term\Digital Signal Processing\Tasks\Digital-Signal-Processing\DSPToolbox\DSPUI\obj\Debug\DSPUI.csproj.CoreCompileInputs.cache
 C:\Huda\FCIS\4th Year\1st Term\Digital Signal Processing\Tasks\Digital-Signal-Processing\DSPToolbox\DSPUI\obj\Debug\DSPUI.exe
 C:\Huda\FCIS\4th Year\1st Term\Digital Signal Processing\Tasks\Digital-Signal-Processing\DSPToolbox\DSPUI\obj\Debug\DSPUI.pdb
+C:\Huda\FCIS\4th Year\1st Term\Digital Signal Processing\Tasks\Digital-Signal-Processing\DSPToolbox\DSPUI\obj\Debug\DSPUI.csproj.CopyComplete
