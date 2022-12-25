@@ -16,7 +16,7 @@ namespace DSPComponentsUnitTest
         public void PracticalTask2TestCaseECG()
         {
             PracticalTask2 T2_Obj = new PracticalTask2();
-            T2_Obj.SignalPath = "TestingSignals/ecg400.ds";
+            T2_Obj.SignalPath = "C:/Huda/FCIS/4th Year/1st Term/Digital Signal Processing/Tasks/Digital-Signal-Processing/DSPToolbox/DSPComponentsUnitTest/TestingSignals/ecg400.ds";
             T2_Obj.miniF = 150;
             T2_Obj.maxF = 250;
             T2_Obj.Fs = 1000;
@@ -29,7 +29,7 @@ namespace DSPComponentsUnitTest
             Signal Res=T2_Obj.OutputFreqDomainSignal;
 
 
-            var expectedOutput = UnitTestUtitlities.LoadSignal("TestingSignals/FileDown.ds");
+            var expectedOutput = UnitTestUtitlities.LoadSignal("C:/Huda/FCIS/4th Year/1st Term/Digital Signal Processing/Tasks/Digital-Signal-Processing/DSPToolbox/DSPComponentsUnitTest/TestingSignals/FileDown.ds");
 
             Assert.IsTrue(UnitTestUtitlities.SignalsSamplesAreEqual(expectedOutput.FrequenciesAmplitudes, Res.FrequenciesAmplitudes)
                 && UnitTestUtitlities.SignalsPhaseShiftsAreEqual(expectedOutput.FrequenciesPhaseShifts, Res.FrequenciesPhaseShifts));
